@@ -1,0 +1,62 @@
+<!-- (TODO): Finish the UI design of the component. -->
+<div class="serviceRequestComponent" id="request{{ requestId }}">
+  <ion-label>
+    <p>
+      <ion-router-link href="/update-service-request">
+        <ion-item class="serviceRequestId">Call #: {{ serviceRequest.id }}</ion-item>
+
+        <ion-item>
+          <div class="serviceRequestDetail">
+            <ion-label><u>Reported</u></ion-label>
+            <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">{{ getDateString(serviceRequest.reportDate) }}</p>
+          </div>
+        </ion-item>
+
+        <ion-item>
+          <div class="serviceRequestDetail">
+            <ion-label><u>Contract</u></ion-label>
+            <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">{{ serviceRequest.contract }}</p>
+          </div>
+        </ion-item>
+
+        <ion-item>
+          <div class="serviceRequestDetail">
+            <ion-label><u>Building</u></ion-label>
+            <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">{{ serviceRequest.building }}</p>
+          </div>
+        </ion-item>
+
+        <ion-item>
+          <div class="serviceRequestDetail">
+            <ion-label><u>Unit Details</u></ion-label>
+            <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">{{ serviceRequest.unitDetails }}</p>
+          </div>
+        </ion-item>
+
+        <ion-item>
+          <div class="serviceRequestDetail">
+            <ion-label><u>Service</u></ion-label>
+            <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">{{ serviceRequest.serviceType }}</p>
+          </div>
+        </ion-item>
+
+        <ion-item>
+          <div class="serviceRequestDetail">
+            <ion-label><u>Remarks</u></ion-label>
+            <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">{{ serviceRequest.remarks }}</p>
+          </div>
+        </ion-item>
+      </ion-router-link>
+
+      <ion-item>
+        <div style="width: 100%; font-size: 16px; display: flex; background: transparent; align-items: center; justify-content: space-around;">
+          <ion-back-button icon="call" text="" defaultHref="/followup-service-request"></ion-back-button>
+          
+          <button (click)="deleteServiceRequest()" style="background: transparent;">
+            <ion-icon style="font-size: xx-large; color: #e93232;" name="trash"></ion-icon>
+          </button>
+        </div>
+      </ion-item>
+    </p>
+  </ion-label>
+</div>

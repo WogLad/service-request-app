@@ -1,0 +1,134 @@
+<ion-header>
+  <ion-toolbar id="toolbar">
+
+    <ion-back-button slot="start" defaultHref="/new-service-request"></ion-back-button>
+
+    <ion-title>Update Service Request</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="parseUpdateServiceRequestForm()">
+    <div class="serviceRequestComponent">
+      <ion-label>
+        <p>
+          <ion-item>
+            <div class="serviceRequestDetail">
+              <ion-label><u>Date</u></ion-label>
+              <br>
+              <ion-button id="open-date-modal" expand="block">Select Date</ion-button>
+              <ion-modal [keepContentsMounted]="true" trigger="open-date-modal" #modal>
+                <ng-template>
+                  <ion-header>
+                    <ion-toolbar>
+                      <ion-buttons slot="start">
+                        <ion-button (click)="modal.dismiss()">Cancel</ion-button>
+                      </ion-buttons>
+                      <ion-buttons slot="end">
+                        <ion-button (click)="modal.dismiss(); parseReportDate();">Done</ion-button>
+                      </ion-buttons>
+                      <ion-title>Enter a Date</ion-title>
+                    </ion-toolbar>
+                  </ion-header>
+                  <ion-content class="ion-padding">
+                    <ion-datetime id="reportDateComponent"></ion-datetime>
+                  </ion-content>
+                </ng-template>
+              </ion-modal>
+            </div>
+          </ion-item>
+    
+          <ion-item>
+            <div class="serviceRequestDetail">
+              <ion-label><u>Contract</u></ion-label>
+              <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">COOO1/SALEM KHALIFA AL QUBAISI (ASTECO) - 200</p>
+            </div>
+          </ion-item>
+    
+          <ion-item>
+            <div class="serviceRequestDetail">
+              <ion-label><u>Location</u></ion-label>
+              <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">EAST15/EAST15</p>
+            </div>
+          </ion-item>
+    
+          <ion-item>
+            <div class="serviceRequestDetail">
+              <ion-label><u>Building</u></ion-label>
+              <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">EASTI5/200 - SALEM KHALIFA AL QUBAISI (ASTECO)</p>
+            </div>
+          </ion-item>
+    
+          <ion-item>
+            <div class="serviceRequestDetail">
+              <ion-label><u>Level</u></ion-label>
+              <ion-select name="level">
+                <ion-select-option>01/Floor 01</ion-select-option>
+              </ion-select>
+            </div>
+          </ion-item>
+    
+          <ion-item>
+            <div class="serviceRequestDetail">
+              <ion-label><u>Main Unit</u></ion-label>
+              <ion-select name="mainUnit">
+                <ion-select-option>ZONE001/GENERAL AREA</ion-select-option>
+              </ion-select>
+            </div>
+          </ion-item>
+    
+          <ion-item>
+            <div class="serviceRequestDetail">
+              <ion-label><u>Unit</u></ion-label>
+              <ion-select name="unit">
+                <ion-select-option>CRO001/CORRIDOR</ion-select-option>
+              </ion-select>
+            </div>
+          </ion-item>
+    
+          <ion-item>
+            <div class="serviceRequestDetail">
+              <ion-label><u>Asset</u></ion-label>
+              <ion-select name="asset">
+                <ion-select-option>AC001</ion-select-option>
+                <ion-select-option>AC002</ion-select-option>
+              </ion-select>
+            </div>
+          </ion-item>
+    
+          <ion-item>
+            <div class="serviceRequestDetail">
+              <ion-label><u>Scope</u></ion-label>
+              <ion-select name="scope">
+                <ion-select-option>SC006/HVAC</ion-select-option>
+              </ion-select>
+            </div>
+          </ion-item>
+    
+          <ion-item>
+            <div class="serviceRequestDetail">
+              <ion-label><u>Service</u></ion-label>
+              <ion-select name="service">
+                <ion-select-option>AC0001/AC NOT COOLING</ion-select-option>
+              </ion-select>
+            </div>
+          </ion-item>
+    
+          <ion-item>
+            <div class="serviceRequestDetail">
+              <ion-label><u>Remarks</u></ion-label>
+              <ion-textarea name="remarks"></ion-textarea>
+            </div>
+          </ion-item>
+        </p>
+      </ion-label>
+    </div>
+  </form>
+  
+  <div class="saveDiv">
+    <button ion-button block>
+      <ion-back-button style="color: white; font-weight: 700;" defaultHref="/new-service-request" icon="" text="SAVE"></ion-back-button>
+    </button>
+  </div>
+</ion-content>

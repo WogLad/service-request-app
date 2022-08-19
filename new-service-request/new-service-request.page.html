@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar id="toolbar">
+
+    <ion-back-button slot="start" defaultHref="/home"></ion-back-button>
+
+    <ion-title>New Service Request</ion-title>
+
+    <ion-back-button icon="home" text="" slot="end" defaultHref="/home" style="margin-right: 10px;"></ion-back-button>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <button ion-button block>
+    <!-- <ion-router-link id="add-service-request-btn" href="/add-service-request">
+      <ion-icon title="Add Service Request" name="add-circle"></ion-icon>
+    </ion-router-link> -->
+    <ion-back-button icon="add-circle" text="" defaultHref="/add-service-request" routerDirection="right" style="font-size: 2.3rem !important;"></ion-back-button>
+  </button>
+
+  <br>
+  <app-service-request *ngFor="let request of serviceRequestList; let i = index" [serviceRequest]="request" [requestId]="i"></app-service-request>
+</ion-content>

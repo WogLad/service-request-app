@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+
+    <ion-back-button slot="start" defaultHref="/new-service-request"></ion-back-button>
+    <ion-title>Followup Service Request</ion-title>
+    
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="max-width: 375px; margin-left: auto">
+  <ion-item>
+    <div class="serviceRequestDetail">
+      <ion-label><u>Call #</u></ion-label>
+      <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">RC00000007 - 02/06/2022 12:00 AM</p>
+    </div>
+  </ion-item>
+
+  <ion-item>
+    <div class="serviceRequestDetail">
+      <ion-label><u>Unit Details #</u></ion-label>
+      <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">200 - SALEM KHALIFA AL QUBAISI (ASTECO)/Floor 01/GENERAL AREA/CORRIDOR</p>
+    </div>
+  </ion-item>
+  
+  <ion-item>
+    <div class="serviceRequestDetail">
+      <ion-label><u>Asset</u></ion-label>
+      <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">AC001</p>
+    </div>
+  </ion-item>
+
+  <ion-item>
+    <div class="serviceRequestDetail">
+      <ion-label><u>Service</u></ion-label>
+      <p style="font-size: 17px; font-weight: 600; overflow-wrap: break-word;">AC NOT COOLING</p>
+    </div>
+  </ion-item>
+
+  <ion-item style="margin-bottom: 20px;">
+    <div class="serviceRequestDetail">
+      <ion-label><u>Followup Remarks</u></ion-label>
+      <ion-textarea [(ngModel)]="followupRemarks" name="remarks"></ion-textarea>
+    </div>
+  </ion-item>
+
+  <div style="color: white; background-color: var(--ion-color-tertiary-shade); max-width: 80%; margin: auto; padding: 10px; border-top-left-radius: 10px; border-top-right-radius: 10px;">
+    Previous Followup #
+  </div>
+
+  <app-followup followupId=1 followupRemarks="TEST 1"></app-followup>
+  <app-followup followupId=2 followupRemarks="another test"></app-followup>
+  <app-followup followupId=3 followupRemarks="URGENT!"></app-followup>
+
+  <br><br><br>
+
+  <div class="saveDiv">
+    <button ion-button block (click)="parseFollowupRemarks()">SAVE</button>
+  </div>
+</ion-content>
